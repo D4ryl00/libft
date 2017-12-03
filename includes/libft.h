@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2017/11/20 10:34:34 by rbarbero         ###   ########.fr       */
+/*   Updated: 2017/12/03 23:57:42 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,11 @@ char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
 char			*ft_itoa(int n);
-void			ft_putchar(char c);
+void			ft_putchar(unsigned int c);
 void			ft_putstr(char const *s);
 void			ft_putendl(char const *s);
 void			ft_putnbr(int n);
-void			ft_putchar_fd(char c, int fd);
+void			ft_putchar_fd(unsigned int c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
@@ -90,5 +90,6 @@ t_list			*ft_lstnewnode(t_list **lst, void *content
 void			ft_lstpushback(t_list **begin_list, void *content
 								, size_t content_size);
 int				ft_lstsize(t_list *begin_list);
+unsigned int	ft_char_encode_utf8(unsigned int c);
 
 #endif
