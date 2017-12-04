@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2017/12/03 23:57:42 by rbarbero         ###   ########.fr       */
+/*   Updated: 2017/12/04 12:44:05 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,6 @@ void			ft_lstpushback(t_list **begin_list, void *content
 								, size_t content_size);
 int				ft_lstsize(t_list *begin_list);
 unsigned int	ft_char_encode_utf8(unsigned int c);
+unsigned int	ft_char_decode_utf8(unsigned int c);
 
 #endif
