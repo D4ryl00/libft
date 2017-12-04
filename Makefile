@@ -6,7 +6,7 @@
 #    By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 12:15:31 by rbarbero          #+#    #+#              #
-#    Updated: 2017/12/04 15:33:38 by rbarbero         ###   ########.fr        #
+#    Updated: 2017/12/04 17:08:32 by rbarbero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	   ft_char_decode_utf8.c
 OBJS = $(SRCS:%.c=%.o)
 HEADERS_DIR = includes/
-HEADERS = libft.h
+HEADERS = libft.h get_next_line.h
+LHEADERS = $(HEADERS:%.h=$(HEADERS_DIR)%.h)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
@@ -40,7 +41,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar -rc $(NAME) $^
 
-$(OBJS): %.o: %.c $(HEADERS_DIR)$(HEADERS)
+$(OBJS): %.o: %.c $(LHEADERS)
 	$(CC) $(CFLAGS) -o $@ -I $(HEADERS_DIR) -c $<
 
 clean:
