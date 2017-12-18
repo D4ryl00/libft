@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/26 09:23:35 by rbarbero          #+#    #+#             */
-/*   Updated: 2017/12/01 23:18:39 by rbarbero         ###   ########.fr       */
+/*   Updated: 2017/12/18 15:34:36 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # define BUFF_SIZE 4096
 
 # include "libft.h"
+
+typedef struct s_list	t_list;
 
 typedef struct	s_buf
 {

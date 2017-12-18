@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2017/12/04 15:49:53 by rbarbero         ###   ########.fr       */
+/*   Updated: 2017/12/18 15:34:54 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <string.h>
+# include "get_next_line.h"
 
 typedef struct	s_list
 {
@@ -21,8 +22,6 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
-
-# include "get_next_line.h"
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
@@ -92,6 +91,8 @@ t_list			*ft_lstnewnode(t_list **lst, void *content
 void			ft_lstpushback(t_list **begin_list, void *content
 								, size_t content_size);
 int				ft_lstsize(t_list *begin_list);
+t_list			*ft_lstinsertincsort(t_list **list, t_list *node
+								, int (*cmp)(t_list *, t_list *));
 unsigned int	ft_char_encode_utf8(unsigned int c);
 unsigned int	ft_char_decode_utf8(unsigned int c);
 
