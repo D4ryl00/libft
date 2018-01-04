@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 18:06:42 by rbarbero          #+#    #+#             */
-/*   Updated: 2017/11/10 14:00:27 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/01/04 14:41:22 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlen(const char *s)
 	size_t	len;
 
 	len = 0;
-	while (*s++)
+	while (s && *s++)
 		len++;
 	return (len);
 }
