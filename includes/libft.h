@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2017/12/20 16:02:34 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/01/04 14:31:53 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list			*ft_strsplittolst(char const *s, char c);
 t_list			*ft_lstnewnode(t_list **lst, void *content
 								, size_t content_size);
-void			ft_lstpushback(t_list **begin_list, void *content
+t_list			*ft_lstpushback(t_list **begin_list, void *content
 								, size_t content_size);
 int				ft_lstsize(t_list *begin_list);
 t_list			*ft_lstinsertincsort(t_list **list, t_list *node
