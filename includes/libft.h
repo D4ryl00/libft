@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/01/12 16:55:29 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/01/15 16:33:19 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
 char			*ft_itoa(int n);
 char			*ft_lltoa_base(long long int n, int base);
+char			*ft_ulltoa_base(unsigned long long int n, int base);
 void			ft_putchar(unsigned int c);
 void			ft_putstr(char const *s);
 void			ft_putendl(char const *s);
