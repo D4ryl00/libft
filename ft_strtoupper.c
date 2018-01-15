@@ -6,9 +6,11 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/15 17:46:30 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/01/15 17:48:32 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/01/15 17:57:37 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_strtoupper(char *s)
 {
