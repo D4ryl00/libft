@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/01/15 18:24:13 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/01/17 14:55:48 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <string.h>
 # include "get_next_line.h"
+# include <wchar.h>
 
 typedef struct	s_list
 {
@@ -101,5 +102,6 @@ void			ft_lstdelnode(t_list **previous, t_list *node
 		, void (*del)(void *, size_t));
 unsigned int	ft_char_encode_utf8(unsigned int c);
 unsigned int	ft_char_decode_utf8(unsigned int c);
+int				ft_wctomb(char *s, wchar_t wchar);
 
 #endif
