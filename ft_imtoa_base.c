@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ulltoa_base.c                                   :+:      :+:    :+:   */
+/*   ft_imtoa_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/15 16:27:39 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/01/15 16:31:29 by rbarbero         ###   ########.fr       */
+/*   Created: 2018/01/18 17:41:10 by rbarbero          #+#    #+#             */
+/*   Updated: 2018/01/18 17:41:16 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-static int	get_size(unsigned long long int n, int base)
+static int	get_size(intmax_t n, int base)
 {
 	int	size;
 
@@ -26,11 +26,11 @@ static int	get_size(unsigned long long int n, int base)
 	return (size);
 }
 
-static char	conv_digit(unsigned long long int n, int base)
+static char	conv_digit(intmax_t n, int base, int neg)
 {
 	int	digit;
 
-	digit = n % base;
+	digit = (neg ? -1 : 1) * (n % base);
 	if (digit < 10)
 		digit += '0';
 	else
@@ -38,19 +38,23 @@ static char	conv_digit(unsigned long long int n, int base)
 	return (digit);
 }
 
-char		*ft_ulltoa_base(unsigned long long int n, int base)
+char		*ft_imtoa_base(intmax_t n, int base)
 {
 	char	*res;
 	int		len;
+	int		neg;
 	int		i;
 
+	neg = n < 0 ? 1 : 0;
 	len = get_size(n, base);
-	if (!(res = (char *)ft_memalloc(sizeof(char) * (len + 1))))
+	if (!(res = (char *)ft_memalloc(sizeof(char) * (len + neg + 1))))
 		return (NULL);
-	i = len;
-	while (--i >= 0)
+	if (neg)
+		res[0] = '-';
+	i = len + neg;
+	while (--i >= 0 + neg)
 	{
-		res[i] = conv_digit(n, base);
+		res[i] = conv_digit(n, base, neg);
 		n /= base;
 	}
 	return (res);

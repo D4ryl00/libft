@@ -6,7 +6,7 @@
 #    By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 12:15:31 by rbarbero          #+#    #+#              #
-#    Updated: 2018/01/17 14:51:39 by rbarbero         ###   ########.fr        #
+#    Updated: 2018/01/18 17:42:41 by rbarbero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,8 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	   ft_lstiter.c ft_lstmap.c ft_strsplittolst.c ft_lstnewnode.c \
 	   ft_lstpushback.c ft_lstsize.c get_next_line.c ft_char_encode_utf8.c \
 	   ft_char_decode_utf8.c ft_lstinsertincsort.c ft_lstdelnode.c \
-	   ft_lltoa_base.c ft_ulltoa_base.c ft_strtoupper.c ft_strtolower.c \
-	   ft_wctomb.c
+	   ft_imtoa_base.c ft_uimtoa_base.c ft_strtoupper.c ft_strtolower.c \
+	   ft_wctomb.c ft_wcslen.c
 OBJS = $(SRCS:%.c=%.o)
 HEADERS_DIR = includes/
 HEADERS = libft.h get_next_line.h

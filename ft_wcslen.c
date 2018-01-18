@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_wcslen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 18:32:19 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/01/18 13:28:35 by rbarbero         ###   ########.fr       */
+/*   Created: 2018/01/18 10:59:59 by rbarbero          #+#    #+#             */
+/*   Updated: 2018/01/18 11:49:52 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strcpy(char *dst, const char *src)
+size_t	ft_wcslen(const wchar_t *s)
 {
-	char	*tmp;
+	size_t	len;
 
-	if (dst && src)
-	{
-		tmp = dst;
-		while (*src)
-			*tmp++ = *src++;
-		*tmp = '\0';
-	}
-	return (dst);
+	len = 0;
+	if (s)
+		while (*s++)
+			len++;
+	return (len);
 }
