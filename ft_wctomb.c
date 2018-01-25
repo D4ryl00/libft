@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/17 13:30:36 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/01/19 17:11:06 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/01/23 17:38:39 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ int	ft_wctomb(char *s, wchar_t wchar)
 	int	ret;
 
 	ret = 0;
-	if (s && MB_CUR_MAX >= 1 && wchar <= 0x7f && (ret = 1))
-		s[0] = wchar;
-	else if (s && MB_CUR_MAX == 1 && wchar <= 0xff && (ret = 1))
+	if (s && ((MB_CUR_MAX >= 1 && wchar <= 0x7f)
+				|| (MB_CUR_MAX == 1 && wchar <= 0xff)) && (ret = 1))
 		s[0] = wchar;
 	else if (s && MB_CUR_MAX >= 2 && wchar <= 0x7ff && (ret = 2))
 	{

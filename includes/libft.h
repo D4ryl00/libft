@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/01/18 17:49:43 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/01/23 16:13:29 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ char			*ft_strsub(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
+int				ft_absolute(int nbr);
 char			*ft_itoa(int n);
 char			*ft_imtoa_base(intmax_t n, int base);
 char			*ft_uimtoa_base(uintmax_t n, int base);
@@ -103,6 +104,7 @@ void			ft_lstdelnode(t_list **previous, t_list *node
 		, void (*del)(void *, size_t));
 unsigned int	ft_char_encode_utf8(unsigned int c);
 unsigned int	ft_char_decode_utf8(unsigned int c);
+int				ft_is_valid_unicode(wint_t wchar);
 int				ft_wctomb(char *s, wchar_t wchar);
 size_t			ft_wcslen(const wchar_t *s);
 
