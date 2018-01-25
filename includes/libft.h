@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/01/23 16:13:29 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/01/25 17:08:48 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <string.h>
 # include "get_next_line.h"
+# include "ft_printf.h"
 # include <wchar.h>
 # include <stdint.h>
 
