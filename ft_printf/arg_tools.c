@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/21 15:35:59 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/01/23 21:13:35 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/03/22 13:44:08 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ UCHAR		new_arg(t_list **args, int pos, const char *type, void **data)
 	{
 		if (!(tmp = ft_lstnew(&arg, sizeof(t_arg))))
 			return (0);
-		ft_lstinsertincsort(args, tmp, t_arg_cmp);
+		ft_lstsortedinsert(args, tmp, t_arg_cmp);
 	}
 	return (1);
 }
