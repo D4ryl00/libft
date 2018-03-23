@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/03/23 06:47:20 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/03/23 14:04:39 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,6 @@ unsigned int	ft_char_decode_utf8(unsigned int c);
 int				ft_is_valid_unicode(wint_t wchar);
 int				ft_wctomb(char *s, wchar_t wchar);
 size_t			ft_wcslen(const wchar_t *s);
+char			*ft_getfilename(char *path);
 
 #endif
