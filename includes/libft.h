@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/03/23 14:04:39 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/03/26 07:34:20 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,8 @@ t_list			*ft_lstrsortedinsert(t_list **list, t_list *node
 								, int (*cmp)(t_list *, t_list *));
 void			ft_lstdelnode(t_list **previous, t_list *node
 		, void (*del)(void *, size_t));
+void			ft_lstdelif(t_list **list, int (*test)(t_list *)
+					, void (*del)(void *, size_t));
 unsigned int	ft_char_encode_utf8(unsigned int c);
 unsigned int	ft_char_decode_utf8(unsigned int c);
 int				ft_is_valid_unicode(wint_t wchar);
