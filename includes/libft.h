@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/03/26 07:34:20 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/03/29 07:50:16 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
 int				ft_absolute(int nbr);
 char			*ft_itoa(int n);
+int				ft_nbrlen(intmax_t n);
 char			*ft_imtoa_base(intmax_t n, int base);
 char			*ft_uimtoa_base(uintmax_t n, int base);
 void			ft_putchar(unsigned int c);
