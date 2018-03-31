@@ -6,13 +6,13 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/26 07:28:24 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/03/27 08:51:13 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/03/31 14:07:36 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void static	delete_node(t_list **list, t_list **previous, t_list **current
+static void	delete_node(t_list **list, t_list **previous, t_list **current
 		, void (*del)(void *, size_t))
 {
 	if (*current == *list)

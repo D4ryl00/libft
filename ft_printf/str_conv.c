@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/18 09:47:01 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/01/24 15:43:04 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/03/31 14:17:25 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static t_seq	*conv_arg_l(t_seq *seq, t_conv *conv)
 
 	max = ft_wcslen(*(wchar_t **)conv->data);
 	len = conv->dot && ((size_t)*conv->precision < (max * MB_CUR_MAX))
-		? *conv->precision : max * MB_CUR_MAX;
+		? (size_t)*conv->precision : max * MB_CUR_MAX;
 	if (!(res = (char *)ft_memalloc((len + 1))))
 		return (NULL);
 	i = -1;

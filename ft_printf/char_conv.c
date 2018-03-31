@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/22 10:01:05 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/01/24 16:00:19 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/03/31 14:09:33 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 #include "libft.h"
 #include <wchar.h>
 #include <stdlib.h>
-
-static int		unicode_is_valid(wint_t wchar)
-{
-	if (wchar < 0 || (wchar >= 0xd800 && wchar <= 0xdfff))
-		return (0);
-	return (1);
-}
 
 static t_seq	*conv_arg(t_seq *seq, t_conv *conv)
 {
@@ -30,7 +23,7 @@ static t_seq	*conv_arg(t_seq *seq, t_conv *conv)
 	{
 		if (!(res = (char *)ft_memalloc(MB_CUR_MAX)))
 			return (NULL);
-		if (!unicode_is_valid(*(wint_t *)conv->data)
+		if (!ft_is_valid_unicode(*(wint_t *)conv->data)
 				|| !(seq->len = ft_wctomb(res, *(wint_t *)conv->data)))
 		{
 			free(res);
