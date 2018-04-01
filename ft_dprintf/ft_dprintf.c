@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 11:37:12 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/01 17:15:00 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/01 18:06:51 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ static int		return_free(int ret, t_conv **convs, int conv_nbr)
 	return (ret);
 }
 
-int				ft_fprintf(int fd, const char *format, ...)
+int				ft_dprintf(int fd, const char *format, ...)
 {
 	va_list	va_args;
 	int		conv_nbr;
