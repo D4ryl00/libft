@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_dprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 11:37:12 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/01/24 15:59:55 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/01 17:15:00 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_dprintf.h"
 #include "libft.h"
 #include <stdarg.h>
 #include <stdlib.h>
@@ -52,7 +52,7 @@ static SCHAR	print_format_conv(t_buffer *buffer, const char **format
 	return (1);
 }
 
-static SCHAR	print_format(const char *format, t_conv *convs)
+static SCHAR	print_format(int fd, const char *format, t_conv *convs)
 {
 	size_t		len;
 	t_buffer	buffer;
@@ -75,7 +75,7 @@ static SCHAR	print_format(const char *format, t_conv *convs)
 		else if (*format == '{')
 			if (!print_color(&buffer, &format))
 				return (-1);
-		buf_print(&buffer);
+		buf_print(fd, &buffer);
 	}
 	return (buffer.n);
 }
@@ -97,7 +97,7 @@ static int		return_free(int ret, t_conv **convs, int conv_nbr)
 	return (ret);
 }
 
-int				ft_printf(const char *format, ...)
+int				ft_fprintf(int fd, const char *format, ...)
 {
 	va_list	va_args;
 	int		conv_nbr;
@@ -115,11 +115,11 @@ int				ft_printf(const char *format, ...)
 		va_start(va_args, format);
 		if (!(parse_format(convs, format, va_args)))
 			return (return_free(0, &convs, conv_nbr));
-		if ((ret = print_format(format, convs)) < 0)
+		if ((ret = print_format(fd, format, convs)) < 0)
 			return (return_free(-1, &convs, conv_nbr));
 		va_end(va_args);
 	}
-	else if ((ret = print_format(format, NULL)) < 0)
+	else if ((ret = print_format(fd, format, NULL)) < 0)
 		return (return_free(-1, &convs, conv_nbr));
 	return (return_free(ret, &convs, conv_nbr));
 }

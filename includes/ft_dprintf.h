@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_dprintf.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/06 12:46:56 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/01/25 17:26:20 by rbarbero         ###   ########.fr       */
+/*   Created: 2018/04/01 17:05:51 by rbarbero          #+#    #+#             */
+/*   Updated: 2018/04/01 17:08:22 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef FT_DPRINTF_H
+# define FT_DPRINTF_H
 
 # include <stdarg.h>
 # include <stdint.h>
@@ -61,6 +61,7 @@ typedef struct	s_buffer
 	t_list		*seq;
 }				t_buffer;
 
+int				ft_dprintf(int fd, const char *format, ...);
 int				ft_printf(const char *format, ...);
 void			init_convs(t_conv *convs, int nbr);
 t_seq			*init_seq(char *str, size_t len);
@@ -104,6 +105,6 @@ t_seq			*n_conv(t_conv *conv, intmax_t n);
 t_seq			*default_conv(t_conv *conv, intmax_t n);
 UCHAR			buf_add_str(t_buffer *buf, char *str);
 UCHAR			buf_add_seq(t_buffer *buf, t_seq *seq);
-void			buf_print(t_buffer *buf);
+void			buf_print(int fd, t_buffer *buf);
 UCHAR			print_color(t_buffer *buf, const char **fmt);
 #endif

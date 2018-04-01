@@ -1,60 +1,88 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   int_conv.c                                         :+:      :+:    :+:   */
+/*   hex_conv.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/22 10:01:05 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/01/22 17:35:58 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/01 17:10:23 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_dprintf.h"
 #include "libft.h"
+#include <stdlib.h>
 
 static char	*conv_arg(t_conv *conv)
 {
 	if (conv->modifier[0] == 'h')
 	{
 		if (conv->modifier[1] == 'h')
-			return (ft_imtoa_base(*(signed char *)conv->data, 10));
-		return (ft_imtoa_base(*(short int *)conv->data, 10));
+			return (ft_uimtoa_base(*(unsigned char *)conv->data, 16));
+		return (ft_uimtoa_base(*(unsigned short int *)conv->data, 16));
 	}
 	else if (conv->modifier[0] == 'l')
 	{
 		if (conv->modifier[1] == 'l')
-			return (ft_imtoa_base(*(long long int *)conv->data, 10));
-		return (ft_imtoa_base(*(long int *)conv->data, 10));
+			return (ft_uimtoa_base(*(unsigned long long int *)conv->data, 16));
+		return (ft_uimtoa_base(*(unsigned long int *)conv->data, 16));
 	}
 	else if (conv->modifier[0] == 'j')
-		return (ft_imtoa_base(*(intmax_t *)conv->data, 10));
+		return (ft_uimtoa_base(*(intmax_t *)conv->data, 16));
 	else if (conv->modifier[0] == 'z')
-		return (ft_imtoa_base(*(size_t *)conv->data, 10));
+		return (ft_uimtoa_base(*(size_t *)conv->data, 16));
 	else
-		return (ft_imtoa_base(*(int *)conv->data, 10));
+		return (ft_uimtoa_base(*(unsigned int *)conv->data, 16));
 }
 
-t_seq		*int_conv(t_conv *conv, intmax_t n)
+static char	*hex_mod_hash(char **str, char *specifier)
+{
+	char	*res;
+	UCHAR	flag;
+
+	if (str)
+	{
+		flag = 0;
+		res = *str;
+		while (*res && !flag)
+			if (*res++ != '0')
+				flag = 1;
+		if (specifier[0] == 'p')
+			flag = 1;
+		if (flag)
+		{
+			if (!(res = (char *)ft_memalloc(sizeof(char)
+							* (ft_strlen(*str) + 3))))
+				return (NULL);
+			res[0] = '0';
+			res[1] = 'x';
+			ft_strcat(res, *str);
+			free(*str);
+			*str = res;
+		}
+	}
+	return (*str);
+}
+
+t_seq		*hex_conv(t_conv *conv, intmax_t n)
 {
 	char	*res;
 	t_seq	*seq;
 
 	(void)n;
-	if (conv->zero && *conv->precision > 0)
+	if (conv->dot)
 		conv->zero = 0;
 	if (!(res = conv_arg(conv)))
 		return (NULL);
 	if (conv->dot && !int_mod_precision(&res, *conv->precision))
 		return (NULL);
-	if (conv->quote && !int_mod_quote(&res))
+	if (conv->hash && !hex_mod_hash(&res, conv->specifier))
 		return (NULL);
-	if (conv->plus && res[0] != '-' && !int_mod_plus(&res))
+	if (!hex_mod_width(&res, conv))
 		return (NULL);
-	if (conv->space && !int_mod_space(&res))
-		return (NULL);
-	if (!int_mod_width(&res, conv))
-		return (NULL);
+	if (conv->specifier[0] == 'X')
+		ft_strtoupper(res);
 	if (!(seq = init_seq(res, ft_strlen(res))))
 		return (NULL);
 	return (seq);

@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arg_tools_del.c                                    :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/23 21:14:14 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/01/23 21:14:16 by rbarbero         ###   ########.fr       */
+/*   Created: 2018/04/01 16:36:17 by rbarbero          #+#    #+#             */
+/*   Updated: 2018/04/01 17:10:11 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "libft.h"
-#include <stdlib.h>
+#include "ft_dprintf.c"
 
-void	arg_del(void *content, size_t content_size)
+int	ft_printf(const char *format, ...)
 {
-	free(content);
-	(void)content_size;
+	return (ft_dprintf(1, format));
 }

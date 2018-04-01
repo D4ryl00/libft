@@ -6,11 +6,11 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 16:03:48 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/01/23 21:36:36 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/01 17:11:45 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_dprintf.h"
 #include "libft.h"
 
 t_seq			*n_conv(t_conv *conv, intmax_t n)

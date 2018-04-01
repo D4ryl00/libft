@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   int_mod_width.c                                    :+:      :+:    :+:   */
+/*   bin_mod_width.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/09 18:50:38 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/01/20 04:27:30 by rbarbero         ###   ########.fr       */
+/*   Created: 2018/01/15 20:55:29 by rbarbero          #+#    #+#             */
+/*   Updated: 2018/04/01 17:09:02 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_dprintf.h"
 #include "libft.h"
 #include <stdlib.h>
 
@@ -19,12 +19,13 @@ static void	mod_width_aux(char *res, char **str, size_t str_len, t_conv *conv)
 	UCHAR	i;
 
 	i = -1;
-	if (conv->zero && (**str == '+' || **str == '-' || **str == ' '))
+	if (conv->zero && (**str == '0' && (*str)[1] == 'b'))
 	{
-		res[++i] = **str;
-		while (++i < *conv->width - str_len + 1)
+		res[++i] = '0';
+		res[++i] = 'b';
+		while (++i < *conv->width - str_len + 2)
 			res[i] = '0';
-		ft_strcat(res, &((*str)[1]));
+		ft_strcat(res, &((*str)[2]));
 	}
 	else
 	{
@@ -34,15 +35,15 @@ static void	mod_width_aux(char *res, char **str, size_t str_len, t_conv *conv)
 	}
 }
 
-char		*int_mod_width(char **str, t_conv *conv)
+char		*bin_mod_width(char **str, t_conv *conv)
 {
 	char	*res;
 	size_t	str_len;
 	UCHAR	i;
 
-	str_len = ft_strlen(*str);
 	conv->minus = *conv->width < 0 ? 1 : conv->minus;
 	*conv->width = ft_absolute(*conv->width);
+	str_len = ft_strlen(*str);
 	if (str_len < (size_t)*conv->width)
 	{
 		if (!(res = (char *)ft_memalloc(sizeof(char) * (*conv->width + 1))))

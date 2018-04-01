@@ -6,11 +6,11 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/03 15:11:27 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/01/22 17:38:50 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/01 17:09:37 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_dprintf.h"
 #include <stdlib.h>
 
 void	init_convs(t_conv *convs, int nbr)
