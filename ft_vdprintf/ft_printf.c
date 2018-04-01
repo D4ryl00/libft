@@ -6,11 +6,11 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/01 16:36:17 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/01 18:33:21 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/01 19:28:34 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_dprintf.c"
+#include "ft_vdprintf.h"
 #include <stdarg.h>
 
 int	ft_printf(const char *format, ...)
