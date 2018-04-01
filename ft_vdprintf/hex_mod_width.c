@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bin_mod_width.c                                    :+:      :+:    :+:   */
+/*   hex_mod_width.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/15 20:55:29 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/01 17:09:02 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/01 19:05:32 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_dprintf.h"
+#include "ft_vdprintf.h"
 #include "libft.h"
 #include <stdlib.h>
 
@@ -19,10 +19,10 @@ static void	mod_width_aux(char *res, char **str, size_t str_len, t_conv *conv)
 	UCHAR	i;
 
 	i = -1;
-	if (conv->zero && (**str == '0' && (*str)[1] == 'b'))
+	if (conv->zero && (**str == '0' && (*str)[1] == 'x'))
 	{
 		res[++i] = '0';
-		res[++i] = 'b';
+		res[++i] = 'x';
 		while (++i < *conv->width - str_len + 2)
 			res[i] = '0';
 		ft_strcat(res, &((*str)[2]));
@@ -35,7 +35,7 @@ static void	mod_width_aux(char *res, char **str, size_t str_len, t_conv *conv)
 	}
 }
 
-char		*bin_mod_width(char **str, t_conv *conv)
+char		*hex_mod_width(char **str, t_conv *conv)
 {
 	char	*res;
 	size_t	str_len;

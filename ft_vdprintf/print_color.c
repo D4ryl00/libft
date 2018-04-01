@@ -6,11 +6,11 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/23 16:18:34 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/01 17:12:48 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/01 19:07:57 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_dprintf.h"
+#include "ft_vdprintf.h"
 #include "libft.h"
 
 static char	*get_color(const char *fmt, const char *p)
