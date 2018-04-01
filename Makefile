@@ -6,7 +6,7 @@
 #    By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 12:15:31 by rbarbero          #+#    #+#              #
-#    Updated: 2018/04/01 19:03:13 by rbarbero         ###   ########.fr        #
+#    Updated: 2018/04/02 00:07:49 by rbarbero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,19 +30,19 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	   ft_wctomb.c ft_wcslen.c ft_absolute.c ft_is_valid_unicode.c \
 	   ft_lstrsortedinsert.c ft_lstaddback.c ft_getfilename.c ft_lstdelif.c \
 	   ft_nbrlen.c
-DIR_FT_VDPRINTF = ft_vdprintf
-SRCS_FT_VDPRINTF = ft_vdprintf.c parse.c parse_format.c parse_width.c \
+DIR_FT_VSDPRINTF = ft_vsdprintf
+SRCS_FT_VSDPRINTF = ft_vsdprintf.c parse.c parse_format.c parse_width.c \
 				 parse_precision.c int_arg.c int_conv.c conv_tools.c \
 				 buf_tools.c int_mod_width.c percent_conv.c \
 				 int_mod_precision.c int_mod_flags.c hex_conv.c octal_conv.c \
 				 uint_conv.c hex_mod_width.c char_arg.c char_conv.c \
 				 str_arg.c str_conv.c default_conv.c bin_conv.c \
 				 bin_mod_width.c n_conv.c n_arg.c arg_tools.c print_color.c \
-				 arg_tools_del.c ft_dprintf.c ft_printf.c
+				 arg_tools_del.c ft_dprintf.c ft_printf.c ft_sprintf.c
 OBJS = $(SRCS:%.c=%.o)
-OBJS += $(SRCS_FT_VDPRINTF:%.c=$(DIR_FT_VDPRINTF)/%.o)
+OBJS += $(SRCS_FT_VSDPRINTF:%.c=$(DIR_FT_VSDPRINTF)/%.o)
 HEADERS_DIR = includes/
-HEADERS = libft.h get_next_line.h ft_vdprintf.h
+HEADERS = libft.h get_next_line.h ft_vsdprintf.h
 LHEADERS = $(HEADERS:%.h=$(HEADERS_DIR)%.h)
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
