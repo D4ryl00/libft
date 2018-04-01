@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 11:37:12 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/01 18:06:51 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/01 18:31:08 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,8 @@ static int		return_free(int ret, t_conv **convs, int conv_nbr)
 	return (ret);
 }
 
-int				ft_dprintf(int fd, const char *format, ...)
+int				ft_dprintf(int fd, const char *format, va_list va_args)
 {
-	va_list	va_args;
 	int		conv_nbr;
 	t_conv	*convs;
 	int		ret;
@@ -112,12 +111,10 @@ int				ft_dprintf(int fd, const char *format, ...)
 	if (conv_nbr)
 	{
 		init_convs(convs, conv_nbr);
-		va_start(va_args, format);
 		if (!(parse_format(convs, format, va_args)))
 			return (return_free(0, &convs, conv_nbr));
 		if ((ret = print_format(fd, format, convs)) < 0)
 			return (return_free(-1, &convs, conv_nbr));
-		va_end(va_args);
 	}
 	else if ((ret = print_format(fd, format, NULL)) < 0)
 		return (return_free(-1, &convs, conv_nbr));
