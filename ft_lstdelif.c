@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/26 07:28:24 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/03 10:23:23 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/03 10:28:36 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ static void	delete_node(t_list **list, t_list **previous, t_list **current
 	}
 }
 
-void		ft_lstdelif(t_list **list, int (*test)(t_list *, void *)
-		, void (*del)(void *, size_t))
+void		ft_lstdelif(t_list **list, void *data
+		, int (*test)(t_list *, void *), void (*del)(void *, size_t))
 {
 	t_list	*previous;
 	t_list	*current;
@@ -37,7 +37,7 @@ void		ft_lstdelif(t_list **list, int (*test)(t_list *, void *)
 	current = *list;
 	while (current)
 	{
-		if (test(current))
+		if (test(current, data))
 			delete_node(list, &previous, &current, del);
 		else
 		{
