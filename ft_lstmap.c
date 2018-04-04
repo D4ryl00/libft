@@ -6,32 +6,17 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/16 16:20:23 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/03/24 09:34:17 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/04 08:29:21 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "libft.h"
 
-static t_list	*free_memory(t_list *lst)
-{
-	t_list	*next;
-
-	while (lst)
-	{
-		next = lst->next;
-		free(lst->content);
-		free(lst);
-		lst = next;
-	}
-	return (NULL);
-}
-
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list	*new;
-	t_list	*p;
-	t_list	*tmp;
+	t_list	*node;
 	t_list	*prev;
 	int		is_first;
 
@@ -39,17 +24,15 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	is_first = 1;
 	while (lst)
 	{
-		tmp = f(lst);
-		if (tmp)
+		node = f(lst);
+		if (node)
 		{
-			if (!(p = ft_lstnew(tmp->content, tmp->content_size)))
-				return (free_memory(new));
 			if (is_first)
-				new = p;
+				new = node;
 			else
-				prev->next = p;
+				prev->next = node;
 			is_first = 0;
-			prev = p;
+			prev = node;
 		}
 		lst = lst->next;
 	}
