@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/26 09:30:47 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/05 14:54:09 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/06 08:37:51 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ static ssize_t	fill_buffer(t_list *node, const int fd)
 		i = -1;
 		while (++i < ret)
 		{
-			if(!ft_lstpushback(&((t_buf *)node->content)->lchar,
+			if (!ft_lstpushback(&((t_buf *)node->content)->lchar,
 					(void *)&buffer[i], sizeof(char)))
 				return (-1);
 			((t_buf *)node->content)->count_nl += buffer[i] == '\n' ? 1 : 0;
