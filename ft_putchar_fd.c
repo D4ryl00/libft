@@ -6,11 +6,12 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/15 14:35:38 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/09 10:24:33 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/09 18:03:29 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 #include "libft.h"
 
 int	ft_putchar_fd(int c, int fd)
