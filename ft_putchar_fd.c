@@ -6,14 +6,14 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/15 14:35:38 by rbarbero          #+#    #+#             */
-/*   Updated: 2017/12/04 10:41:27 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/09 10:24:33 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-void	ft_putchar_fd(unsigned int c, int fd)
+int	ft_putchar_fd(int c, int fd)
 {
 	unsigned char	*p;
 	signed char		i;
@@ -25,7 +25,9 @@ void	ft_putchar_fd(unsigned int c, int fd)
 	while (++i < 4)
 	{
 		if (*p || i == 3)
-			write(fd, p, 1);
+			if (write(fd, p, 1) < 0)
+				return (EOF);
 		p--;
 	}
+	return ((int)c);
 }
