@@ -6,7 +6,7 @@
 #    By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 12:15:31 by rbarbero          #+#    #+#              #
-#    Updated: 2018/04/07 14:30:07 by rbarbero         ###   ########.fr        #
+#    Updated: 2018/04/10 10:15:12 by rbarbero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	   ft_imtoa_base.c ft_uimtoa_base.c ft_strtoupper.c ft_strtolower.c \
 	   ft_wctomb.c ft_wcslen.c ft_absolute.c ft_is_valid_unicode.c \
 	   ft_lstrsortedinsert.c ft_lstaddback.c ft_getfilename.c ft_lstdelif.c \
-	   ft_nbrlen.c ft_lstselect.c
+	   ft_nbrlen.c ft_lstselect.c ft_strarrtolist.c
 DIR_FT_VSDPRINTF = ft_vsdprintf
 SRCS_FT_VSDPRINTF = ft_vsdprintf.c parse.c parse_format.c parse_width.c \
 				 parse_precision.c int_arg.c int_conv.c conv_tools.c \

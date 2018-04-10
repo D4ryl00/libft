@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/09 10:23:52 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/10 10:22:38 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ char			*ft_strsub(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
+t_list			*ft_strnarrtolist(char **arr, int len);
+t_list			*ft_strarrtolist(char **arr);
 int				ft_absolute(int nbr);
 char			*ft_itoa(int n);
 int				ft_nbrlen(intmax_t n);
