@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/20 14:01:04 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/21 22:40:44 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,6 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
-
-typedef struct	s_btree
-{
-	void			*content;
-	struct s_btree	*parent;
-	struct s_btree	*left;
-	struct s_btree	*right;
-}				t_btree;
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
@@ -73,7 +65,6 @@ void			ft_memdel(void **ap);
 char			*ft_strnew(size_t size);
 void			ft_strdel(char **as);
 void			ft_strclr(char *s);
-void			ft_strnclr(char *s, int len);
 void			ft_striter(char *s, void (*f)(char *));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 char			*ft_strmap(char const *s, char (*f)(char));
@@ -84,18 +75,17 @@ char			*ft_strsub(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
-t_list			*ft_strnarrtolist(char **arr, int len);
-t_list			*ft_strarrtolist(char **arr);
+char			**ft_strsplitstr(char *str, char *tokens);
 int				ft_absolute(int nbr);
 char			*ft_itoa(int n);
 int				ft_nbrlen(intmax_t n);
 char			*ft_imtoa_base(intmax_t n, int base);
 char			*ft_uimtoa_base(uintmax_t n, int base);
-int				ft_putchar(int c);
+void			ft_putchar(unsigned int c);
 void			ft_putstr(char const *s);
 void			ft_putendl(char const *s);
 void			ft_putnbr(int n);
-int				ft_putchar_fd(int c, int fd);
+void			ft_putchar_fd(unsigned int c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
