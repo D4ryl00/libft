@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strpushback.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/26 09:23:35 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/24 14:14:25 by rbarbero         ###   ########.fr       */
+/*   Created: 2018/04/24 10:02:48 by rbarbero          #+#    #+#             */
+/*   Updated: 2018/04/24 13:54:46 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
+#include <stdlib.h>
 
-# define BUFF_SIZE 4096
-
-# include "libft.h"
-
-typedef struct s_list	t_list;
-
-typedef struct	s_buff
+size_t	ft_strpushback(char **str, char c)
 {
-	int				fd;
-	t_list			*lchar;
-	unsigned int	count_nl;
-}				t_buff;
+	char	*tmp;
+	size_t	len;
 
-int				get_next_line(const int fd, char **line);
-
-#endif
+	len = ft_strlen(*str) + 1;
+	if (!(tmp = (char *)malloc(sizeof(char) * (len + 1))))
+		return (0);
+	if (*str)
+	{
+		ft_strcpy(tmp, *str);
+		free(*str);
+		*str = tmp;
+	}
+	(*str)[len - 1] = c;
+	(*str)[len] = '\0';
+	return (len);
+}

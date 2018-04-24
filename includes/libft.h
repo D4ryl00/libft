@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/21 23:18:22 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/24 14:21:06 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include "ft_vsdprintf.h"
 # include <wchar.h>
 # include <stdint.h>
+
+# define BUFFER_SIZE 4096
 
 typedef struct	s_list
 {
@@ -33,6 +35,12 @@ typedef struct	s_btree
 	struct s_btree	*left;
 	struct s_btree	*right;
 }				t_btree;
+
+typedef struct	s_buf
+{
+	char	buf[BUFFER_SIZE];
+	int		i;
+}				t_buf;
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
@@ -55,6 +63,7 @@ char			*ft_strnstr(const char *haystack, const char *needle
 							, size_t len);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
+size_t			ft_strpushback(char **str, char c);
 int				ft_atoi(const char *str);
 int				ft_isupper(int c);
 int				ft_islower(int c);
@@ -129,5 +138,7 @@ int				ft_is_valid_unicode(wint_t wchar);
 int				ft_wctomb(char *s, wchar_t wchar);
 size_t			ft_wcslen(const wchar_t *s);
 char			*ft_getfilename(char *path);
+int				ft_buf_flush(char **dest, t_buf *buffer);
+int				ft_buf_add(t_buf *buffer, char c, char **dest);
 
 #endif

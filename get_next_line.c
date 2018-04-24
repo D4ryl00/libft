@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/26 09:30:47 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/06 08:37:51 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/24 14:15:33 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ static t_list	*init_bufs(t_list **bufs, const int fd)
 	node = *bufs;
 	while (node)
 	{
-		if (((t_buf *)(node)->content)->fd == fd)
+		if (((t_buff *)(node)->content)->fd == fd)
 			return (node);
 		node = node->next;
 	}
 	if (!(node = ft_lstnew(NULL, 0))
-			|| !(node->content = malloc(sizeof(t_buf))))
+			|| !(node->content = malloc(sizeof(t_buff))))
 		return (NULL);
-	node->content_size = sizeof(t_buf);
-	((t_buf *)node->content)->fd = fd;
-	((t_buf *)node->content)->lchar = NULL;
-	((t_buf *)node->content)->count_nl = 0;
+	node->content_size = sizeof(t_buff);
+	((t_buff *)node->content)->fd = fd;
+	((t_buff *)node->content)->lchar = NULL;
+	((t_buff *)node->content)->count_nl = 0;
 	ft_lstadd(bufs, node);
 	return (node);
 }
@@ -89,12 +89,12 @@ static ssize_t	fill_buffer(t_list *node, const int fd)
 		i = -1;
 		while (++i < ret)
 		{
-			if (!ft_lstpushback(&((t_buf *)node->content)->lchar,
+			if (!ft_lstpushback(&((t_buff *)node->content)->lchar,
 					(void *)&buffer[i], sizeof(char)))
 				return (-1);
-			((t_buf *)node->content)->count_nl += buffer[i] == '\n' ? 1 : 0;
+			((t_buff *)node->content)->count_nl += buffer[i] == '\n' ? 1 : 0;
 		}
-		if (((t_buf *)node->content)->count_nl)
+		if (((t_buff *)node->content)->count_nl)
 			break ;
 	}
 	return (ret);
@@ -109,14 +109,14 @@ int				get_next_line(const int fd, char **line)
 	ret = 0;
 	if (!(node = init_bufs(&bufs, fd)))
 		return (-1);
-	if (!(((t_buf *)node->content)->count_nl))
+	if (!(((t_buff *)node->content)->count_nl))
 		if ((ret = fill_buffer(node, fd)) == -1)
 			return (-1);
-	if (((t_buf *)node->content)->count_nl
-			|| (!ret && ((t_buf *)node->content)->lchar))
+	if (((t_buff *)node->content)->count_nl
+			|| (!ret && ((t_buff *)node->content)->lchar))
 	{
-		((t_buf *)node->content)->count_nl--;
-		return (pop_buf(line, &(((t_buf *)node->content)->lchar)));
+		((t_buff *)node->content)->count_nl--;
+		return (pop_buf(line, &(((t_buff *)node->content)->lchar)));
 	}
 	return (0);
 }

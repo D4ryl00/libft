@@ -6,14 +6,14 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/21 18:06:44 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/21 22:53:15 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/24 14:19:43 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static int	get_str_nbr(char *str, char *tokens)
+static int	get_str_nbr(char const *str, char *tokens)
 {
 	int				len;
 	unsigned char	f_word;
@@ -52,10 +52,10 @@ static char	**free_dest(char **dest, int str_nbr)
 	return (NULL);
 }
 
-static char	**fill_dest(char **dest, char *str, int str_nbr, char *tokens)
+static char	**fill_dest(char **dest, char const *str, int str_nbr, char *tokens)
 {
-	char	*end;
-	int		i;
+	char const	*end;
+	int			i;
 
 	i = -1;
 	while (*str)
@@ -77,7 +77,7 @@ static char	**fill_dest(char **dest, char *str, int str_nbr, char *tokens)
 	return (dest);
 }
 
-char		**ft_strsplitstr(char *str, char *tokens)
+char		**ft_strsplitstr(char const *str, char *tokens)
 {
 	int		str_nbr;
 	char	**dest;
