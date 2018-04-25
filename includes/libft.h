@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/24 14:21:06 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/04/25 10:23:47 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,9 @@ typedef struct	s_btree
 
 typedef struct	s_buf
 {
-	char	buf[BUFFER_SIZE];
-	int		i;
+	char	*buf;
+	long	i;
+	long	size;
 }				t_buf;
 
 void			*ft_memset(void *b, int c, size_t len);
@@ -138,7 +139,10 @@ int				ft_is_valid_unicode(wint_t wchar);
 int				ft_wctomb(char *s, wchar_t wchar);
 size_t			ft_wcslen(const wchar_t *s);
 char			*ft_getfilename(char *path);
-int				ft_buf_flush(char **dest, t_buf *buffer);
-int				ft_buf_add(t_buf *buffer, char c, char **dest);
+int				ft_buf_init(t_buf *buffer);
+char			*ft_buf_flush(t_buf *buffer);
+int				ft_buf_extend(t_buf *buffer);
+int				ft_buf_add_char(t_buf *buffer, char c);
+void			ft_buf_destroy(t_buf *buffer);
 
 #endif
