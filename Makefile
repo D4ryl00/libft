@@ -6,7 +6,7 @@
 #    By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 12:15:31 by rbarbero          #+#    #+#              #
-#    Updated: 2018/04/25 10:21:50 by rbarbero         ###   ########.fr        #
+#    Updated: 2018/05/14 15:06:36 by rbarbero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	   ft_lstrsortedinsert.c ft_lstaddback.c ft_getfilename.c ft_lstdelif.c \
 	   ft_nbrlen.c ft_lstselect.c ft_strarrtolist.c ft_strnarrtolist.c \
 	   ft_strnclr.c ft_strsplitstr.c ft_strpushback.c ft_buf_flush.c \
-	   ft_buf_add_char.c ft_buf_init.c ft_buf_destroy.c ft_buf_extend.c
+	   ft_buf_add_char.c ft_buf_init.c ft_buf_destroy.c ft_buf_extend.c \
+	   ft_buf_insert_char.c ft_buf_delete_char.c
 DIR_FT_VSDPRINTF = ft_vsdprintf
 SRCS_FT_VSDPRINTF = ft_vsdprintf.c parse.c parse_format.c parse_width.c \
 				 parse_precision.c int_arg.c int_conv.c conv_tools.c \
@@ -46,7 +47,7 @@ OBJS += $(SRCS_FT_VSDPRINTF:%.c=$(DIR_FT_VSDPRINTF)/%.o)
 HEADERS_DIR = includes/
 HEADERS = libft.h get_next_line.h ft_vsdprintf.h
 LHEADERS = $(HEADERS:%.h=$(HEADERS_DIR)%.h)
-CC = gcc
+CC = clang
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
