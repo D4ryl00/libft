@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 22:24:59 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/09/15 22:50:14 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/09/15 23:20:01 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,11 @@ void	ft_strarrdel(char **arr)
 	{
 		p = arr;
 		while (p)
+		{
 			if (*p)
 				free(*p);
+			p++;
+		}
 		free(arr);
 	}
 }
