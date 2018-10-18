@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/18 16:07:15 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/10/18 16:24:56 by rbarbero         ###   ########.fr       */
+/*   Updated: 2018/10/18 17:05:48 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ t_list		*ft_lstdup(t_list *src)
 			dest = dest->next;
 			src = src->next;
 		}
+		dest = save;
 	}
 	return (dest);
 }
