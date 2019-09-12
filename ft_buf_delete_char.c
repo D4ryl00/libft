@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/14 14:55:24 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/05/18 10:26:32 by rbarbero         ###   ########.fr       */
+/*   Updated: 2019/09/12 16:44:49 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 int	ft_buf_delete_char(t_buf *buffer, int index)
 {
-	int	data_len;
 	int	i;
 
-	data_len = 1;
 	if (index >= buffer->i)
 		return (-1);
 	i = index - 1;
