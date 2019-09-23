@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2019/09/23 07:47:40 by rbarbero         ###   ########.fr       */
+/*   Updated: 2019/09/23 16:10:59 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@
 # include <stdint.h>
 
 # define BUFFER_SIZE 4096
+# ifndef LITTLE_ENDIAN
+#  define LITTLE_ENDIAN 0
+# endif
+# ifndef BIG_ENDIAN
+#  define BIG_ENDIAN 1
+# endif
 
 typedef struct	s_list
 {
@@ -161,5 +167,21 @@ void			ft_btreedelone(t_btree **abtree, void (*del)(void *, size_t));
 void			ft_btreedel(t_btree **abtree, void (*del)(void *, size_t));
 int				ft_strarrchr(char *str, char **arr);
 char			*ft_strndup(const char *s1, unsigned int n);
+int				ft_endianness_which(void);
+uint16_t		ft_swap_int16(uint16_t d);
+uint16_t		endian_16_big_to_native(uint16_t d);
+uint16_t		endian_16_little_to_native(uint16_t d);
+uint16_t		endian_16_native_to_big(uint16_t d);
+uint16_t		endian_16_native_to_little(uint16_t d);
+uint32_t		ft_swap_int32(uint32_t d);
+uint32_t		endian_32_big_to_native(uint32_t d);
+uint32_t		endian_32_little_to_native(uint32_t d);
+uint32_t		endian_32_native_to_big(uint32_t d);
+uint32_t		endian_32_native_to_little(uint32_t d);
+uint64_t		ft_swap_int64(uint64_t d);
+uint64_t		endian_64_big_to_native(uint64_t d);
+uint64_t		endian_64_little_to_native(uint64_t d);
+uint64_t		endian_64_native_to_big(uint64_t d);
+uint64_t		endian_6_native_to_little(uint64_t d);
 
 #endif
