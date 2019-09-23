@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2019/09/23 06:23:47 by rbarbero         ###   ########.fr       */
+/*   Updated: 2019/09/23 07:47:40 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ char			*ft_strnstr(const char *haystack, const char *needle
 							, size_t len);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
+int				ft_stricmp(const char *s1, const char *s2);
 size_t			ft_strpushback(char **str, char c);
 int				ft_atoi(const char *str);
 int				ft_isupper(int c);
