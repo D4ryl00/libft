@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 09:54:47 by rbarbero          #+#    #+#             */
-/*   Updated: 2019/09/19 10:40:29 by rbarbero         ###   ########.fr       */
+/*   Updated: 2019/09/23 06:24:21 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static size_t	compute_res_length(const char **array, const char *delim)
 ** if it exists.
 */
 
-char 			*ft_strarrtostr(const char **array, const char *delim)
+char			*ft_strarrtostr(const char **array, const char *delim)
 {
 	char			*res;
 	const char		*str;
