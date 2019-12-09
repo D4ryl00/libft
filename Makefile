@@ -6,7 +6,7 @@
 #    By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 12:15:31 by rbarbero          #+#    #+#              #
-#    Updated: 2019/09/24 10:00:09 by rbarbero         ###   ########.fr        #
+#    Updated: 2019/12/09 17:53:35 by rbarbero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,9 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	   ft_lsttoarrstr.c ft_strarrchr.c ft_buf_add_str.c ft_strndup.c \
 	   ft_strmove.c ft_lstdup.c ft_buf_add_nstr.c ft_lstpush.c \
 	   ft_strarrtostr.c ft_stricmp.c ft_endianness_which.c ft_endianness_16.c \
-	   ft_endianness_32.c ft_endianness_64.c
+	   ft_endianness_32.c ft_endianness_64.c ft_hash.c ft_hash_is_occupied.c \
+	   ft_hash_find.c ft_hash_insert.c ft_hash_lookup.c ft_hash_table_create.c \
+	   ft_hash_table_destroy.c
 DIR_FT_VSDPRINTF = ft_vsdprintf
 SRCS_FT_VSDPRINTF = ft_vsdprintf.c parse.c parse_format.c parse_width.c \
 				 parse_precision.c int_arg.c int_conv.c conv_tools.c \

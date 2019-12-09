@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2019/09/23 16:10:59 by rbarbero         ###   ########.fr       */
+/*   Updated: 2019/12/09 17:50:48 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,18 @@ typedef struct	s_buf
 	long	i;
 	long	size;
 }				t_buf;
+
+struct			s_dict
+{
+	size_t			size;
+	struct s_bucket *table;
+};
+
+struct			s_bucket
+{
+	char	*key;
+	void	*value;
+};
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
@@ -183,5 +195,13 @@ uint64_t		endian_64_big_to_native(uint64_t d);
 uint64_t		endian_64_little_to_native(uint64_t d);
 uint64_t		endian_64_native_to_big(uint64_t d);
 uint64_t		endian_6_native_to_little(uint64_t d);
+int				ft_hash(char *str);
+struct s_bucket	*ft_hash_table_create(struct s_dict *dict,
+		struct s_bucket *table, size_t size);
+void			ft_hash_table_destroy(struct s_dict *dict);
+int				ft_hash_is_occupied(struct s_bucket *bucket);
+struct s_bucket	*ft_hash_find(struct s_dict *dict, char *key);
+struct s_bucket	*ft_hash_insert(struct s_dict *dict, char *key, void *value);
+void			*ft_hash_lookup(struct s_dict *dict, char *key);
 
 #endif
