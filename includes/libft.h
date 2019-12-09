@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2019/12/09 17:50:48 by rbarbero         ###   ########.fr       */
+/*   Updated: 2019/12/10 00:26:48 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,8 @@ t_list			*ft_strnarrtolist(char **arr, int len);
 t_list			*ft_strarrtolist(char **arr);
 char			*ft_strarrtostr(const char **array, const char *delim);
 void			ft_strarrdel(char **arr);
+size_t			ft_strspn(const char *s, const char *accept);
+size_t			ft_strcspn(const char *s, const char *reject);
 int				ft_absolute(int nbr);
 char			*ft_itoa(int n);
 int				ft_nbrlen(intmax_t n);
