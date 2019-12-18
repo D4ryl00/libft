@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/22 10:01:05 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/01 23:42:48 by rbarbero         ###   ########.fr       */
+/*   Updated: 2019/12/18 12:08:20 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ static char	*conv_arg(t_conv *conv)
 
 static char	*hex_mod_hash(char **str, char *specifier)
 {
-	char	*res;
-	UCHAR	flag;
+	char			*res;
+	unsigned char	flag;
 
 	if (str)
 	{

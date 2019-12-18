@@ -15,7 +15,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
-static UCHAR	llmodifier(t_list *args, va_list va_args)
+static unsigned char	llmodifier(t_list *args, va_list va_args)
 {
 	if (!(*(((t_arg *)args->content)->data) = malloc(sizeof(long long int))))
 		return (0);
@@ -24,7 +24,7 @@ static UCHAR	llmodifier(t_list *args, va_list va_args)
 	return (1);
 }
 
-static UCHAR	lmodifier(t_list *args, va_list va_args)
+static unsigned char	lmodifier(t_list *args, va_list va_args)
 {
 	if (!(*(((t_arg *)args->content)->data) = malloc(sizeof(long int))))
 		return (0);
@@ -33,7 +33,7 @@ static UCHAR	lmodifier(t_list *args, va_list va_args)
 	return (1);
 }
 
-static UCHAR	jmodifier(t_list *args, va_list va_args)
+static unsigned char	jmodifier(t_list *args, va_list va_args)
 {
 	if (!(*(((t_arg *)args->content)->data) = malloc(sizeof(intmax_t))))
 		return (0);
@@ -42,7 +42,7 @@ static UCHAR	jmodifier(t_list *args, va_list va_args)
 	return (1);
 }
 
-static UCHAR	zmodifier(t_list *args, va_list va_args)
+static unsigned char	zmodifier(t_list *args, va_list va_args)
 {
 	if (!(*(((t_arg *)args->content)->data) = malloc(sizeof(size_t))))
 		return (0);
@@ -50,7 +50,7 @@ static UCHAR	zmodifier(t_list *args, va_list va_args)
 	return (1);
 }
 
-UCHAR			take_int_args(t_list *args, va_list va_args)
+unsigned char			take_int_args(t_list *args, va_list va_args)
 {
 	char	modifier[3];
 

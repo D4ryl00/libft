@@ -15,7 +15,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
-UCHAR	take_n_args(t_list *args, va_list va_args)
+unsigned char	take_n_args(t_list *args, va_list va_args)
 {
 	char	modifier[3];
 

@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/12 14:54:52 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/01 23:43:45 by rbarbero         ###   ########.fr       */
+/*   Updated: 2019/12/18 12:09:47 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static char	*int_mod_precision_aux(char **str, size_t len, UCHAR sign)
+static char	*int_mod_precision_aux(char **str, size_t len, unsigned char sign)
 {
-	char	*res;
-	UCHAR	i;
-	UCHAR	zero;
+	char			*res;
+	unsigned char	i;
+	unsigned char	zero;
 
 	i = sign ? 0 : -1;
 	zero = 0;
@@ -43,10 +43,10 @@ static char	*int_mod_precision_aux(char **str, size_t len, UCHAR sign)
 
 char		*int_mod_precision(char **str, int precision)
 {
-	size_t	len;
-	char	*res;
-	UCHAR	sign;
-	UCHAR	i;
+	size_t			len;
+	char			*res;
+	unsigned char	sign;
+	unsigned char	i;
 
 	sign = **str == '-' || **str == '+' ? 1 : 0;
 	len = ft_strlen(*str);

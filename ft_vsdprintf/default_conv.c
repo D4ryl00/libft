@@ -15,7 +15,7 @@
 
 static void	default_conv_aux(char *res, size_t res_len, t_conv *conv)
 {
-	UCHAR	i;
+	unsigned char	i;
 
 	if (conv->minus)
 	{

@@ -16,7 +16,7 @@
 #include <stdlib.h>
 #include <wchar.h>
 
-UCHAR	take_char_args(t_list *args, va_list va_args)
+unsigned char	take_char_args(t_list *args, va_list va_args)
 {
 	char	modifier[3];
 

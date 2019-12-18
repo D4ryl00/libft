@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/21 15:50:17 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/01 23:44:39 by rbarbero         ###   ########.fr       */
+/*   Updated: 2019/12/18 12:11:20 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-void		parse_position_arg(t_conv *conv, const char **fmt, int *arg_i)
+void			parse_position_arg(t_conv *conv, const char **fmt, int *arg_i)
 {
 	const char	*format;
 	int			i;
@@ -37,7 +37,7 @@ void		parse_position_arg(t_conv *conv, const char **fmt, int *arg_i)
 		conv->position = (*arg_i)++;
 }
 
-void		parse_flags(t_conv *conv, const char **fmt)
+void			parse_flags(t_conv *conv, const char **fmt)
 {
 	const char	*format;
 
@@ -61,9 +61,9 @@ void		parse_flags(t_conv *conv, const char **fmt)
 	*fmt = format;
 }
 
-void		parse_modifier(t_conv *conv, const char **fmt)
+void			parse_modifier(t_conv *conv, const char **fmt)
 {
-	UCHAR	i;
+	unsigned char	i;
 
 	i = 0;
 	if (**fmt && ft_strchr("hljz", **fmt))
@@ -78,7 +78,7 @@ void		parse_modifier(t_conv *conv, const char **fmt)
 	}
 }
 
-static void	parse_specifier_aux(t_conv *conv)
+static void		parse_specifier_aux(t_conv *conv)
 {
 	if (conv->specifier[0] == 'd' || conv->specifier[0] == 'i')
 		conv->fconv = int_conv;
@@ -100,7 +100,7 @@ static void	parse_specifier_aux(t_conv *conv)
 		conv->fconv = percent_conv;
 }
 
-UCHAR		parse_specifier(t_conv *conv, const char **fmt)
+unsigned char	parse_specifier(t_conv *conv, const char **fmt)
 {
 	if (**fmt && ft_strchr(CONV_SPEC, **fmt))
 	{

@@ -73,7 +73,7 @@ static t_seq	*conv_arg(t_seq *seq, t_conv *conv)
 
 static void		str_mod_width_aux(char *res, t_seq *seq, t_conv *conv)
 {
-	UCHAR	i;
+	unsigned char	i;
 
 	if (conv->minus)
 	{

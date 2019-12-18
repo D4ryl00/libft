@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/01 17:05:51 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/10/10 11:24:24 by rbarbero         ###   ########.fr       */
+/*   Updated: 2019/12/18 12:13:16 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include <stdint.h>
 # include "libft.h"
 
-# define SCHAR signed char
-# define UCHAR unsigned char
 # define CONV_SPEC "dDiuUoOxXcCsSpnb%"
 # define CONV_MOD "hljz"
 # define AUTH_CHAR "dDiuUoOxXcCsSpnb.0123456789*$#- +'hljz%"

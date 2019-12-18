@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/23 15:51:24 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/01 23:44:48 by rbarbero         ###   ########.fr       */
+/*   Updated: 2019/12/18 12:10:31 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static UCHAR	parse_precision_star(t_conv *conv, const char **fmt
+static unsigned char	parse_precision_star(t_conv *conv, const char **fmt
 		, t_list **args, int *arg_i)
 {
 	int			nbr;
@@ -37,7 +37,7 @@ static UCHAR	parse_precision_star(t_conv *conv, const char **fmt
 	return (1);
 }
 
-static UCHAR	parse_precision_dot(t_conv *conv, const char **fmt
+static unsigned char	parse_precision_dot(t_conv *conv, const char **fmt
 		, t_list **args, int *arg_i)
 {
 	int	nbr;
@@ -63,8 +63,8 @@ static UCHAR	parse_precision_dot(t_conv *conv, const char **fmt
 	return (1);
 }
 
-UCHAR			parse_precision(t_conv *conv, const char **fmt, t_list **args
-		, int *arg_i)
+unsigned char			parse_precision(t_conv *conv, const char **fmt,
+		t_list **args, int *arg_i)
 {
 	if (*fmt && **fmt == '.')
 		return (parse_precision_dot(conv, fmt, args, arg_i));

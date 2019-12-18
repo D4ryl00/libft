@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/23 15:41:00 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/01 23:44:59 by rbarbero         ###   ########.fr       */
+/*   Updated: 2019/12/18 12:11:56 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static UCHAR	parse_width_nbr(t_conv *conv, const char **fmt, t_list **args
-		, int *arg_i)
+static unsigned char	parse_width_nbr(t_conv *conv, const char **fmt,
+		t_list **args, int *arg_i)
 {
 	if (!(conv->width = (int *)malloc(sizeof(int))))
 		return (0);
@@ -27,8 +27,8 @@ static UCHAR	parse_width_nbr(t_conv *conv, const char **fmt, t_list **args
 	return (1);
 }
 
-static UCHAR	parse_width_dollar(t_conv *conv, const char **fmt, t_list **args
-		, int *arg_i)
+static unsigned char	parse_width_dollar(t_conv *conv, const char **fmt,
+		t_list **args, int *arg_i)
 {
 	int	nbr;
 
@@ -52,8 +52,8 @@ static UCHAR	parse_width_dollar(t_conv *conv, const char **fmt, t_list **args
 	return (1);
 }
 
-UCHAR			parse_width(t_conv *conv, const char **fmt, t_list **args
-		, int *arg_i)
+unsigned char			parse_width(t_conv *conv, const char **fmt,
+		t_list **args, int *arg_i)
 {
 	if (*fmt && ft_isdigit(**fmt))
 		return (parse_width_nbr(conv, fmt, args, arg_i));

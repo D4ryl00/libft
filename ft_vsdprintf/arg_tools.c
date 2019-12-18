@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/21 15:35:59 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/01 23:39:21 by rbarbero         ###   ########.fr       */
+/*   Updated: 2019/12/18 12:06:05 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static int	t_arg_cmp(t_list *n1, t_list *n2)
+static int		t_arg_cmp(t_list *n1, t_list *n2)
 {
 	if (!n1 && !n2)
 		return (0);
@@ -25,7 +25,7 @@ static int	t_arg_cmp(t_list *n1, t_list *n2)
 	return (((t_arg *)n1->content)->pos - ((t_arg *)n2->content)->pos);
 }
 
-UCHAR		new_arg(t_list **args, int pos, const char *type, void **data)
+unsigned char	new_arg(t_list **args, int pos, const char *type, void **data)
 {
 	t_list	*tmp;
 	t_arg	arg;
@@ -43,21 +43,21 @@ UCHAR		new_arg(t_list **args, int pos, const char *type, void **data)
 	return (1);
 }
 
-char		get_specifier(const char *str)
+char			get_specifier(const char *str)
 {
 	while (!ft_strchr(CONV_SPEC, *str))
 		str++;
 	return (*str);
 }
 
-void		get_modifier(char *modifier, const char *str)
+void			get_modifier(char *modifier, const char *str)
 {
 	while (*str && ft_strchr(CONV_MOD, *str))
 		*modifier++ = *str++;
 	*modifier = '\0';
 }
 
-void		take_args(t_list **args, va_list va_args)
+void			take_args(t_list **args, va_list va_args)
 {
 	char	specifier;
 

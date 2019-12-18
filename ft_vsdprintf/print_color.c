@@ -6,14 +6,14 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/23 16:18:34 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/01 23:45:28 by rbarbero         ###   ########.fr       */
+/*   Updated: 2019/12/18 12:12:26 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_vsdprintf.h"
 #include "libft.h"
 
-static char	*get_color(const char *fmt, const char *p)
+static char		*get_color(const char *fmt, const char *p)
 {
 	if (!ft_strncmp(fmt, "{eoc}", p - fmt + 1))
 		return (ft_strdup("\x1B[0m"));
@@ -37,7 +37,7 @@ static char	*get_color(const char *fmt, const char *p)
 		return (ft_strsub(fmt, 0, p - fmt + 1));
 }
 
-UCHAR		print_color(t_buffer *buf, const char **fmt)
+unsigned char	print_color(t_buffer *buf, const char **fmt)
 {
 	const char	*p;
 	char		*color;

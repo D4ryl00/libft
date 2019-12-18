@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/04 13:11:33 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/02 00:40:34 by rbarbero         ###   ########.fr       */
+/*   Updated: 2019/12/18 12:07:10 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-UCHAR		buf_add_str(t_buffer *buf, char *str)
+unsigned char		buf_add_str(t_buffer *buf, char *str)
 {
 	size_t	len;
 	t_seq	seq;
@@ -29,7 +29,7 @@ UCHAR		buf_add_str(t_buffer *buf, char *str)
 	return (1);
 }
 
-UCHAR		buf_add_seq(t_buffer *buf, t_seq *seq)
+unsigned char		buf_add_seq(t_buffer *buf, t_seq *seq)
 {
 	if (!seq)
 		return (0);
@@ -39,7 +39,7 @@ UCHAR		buf_add_seq(t_buffer *buf, t_seq *seq)
 	return (1);
 }
 
-static void	seq_del(void *content, size_t content_size)
+static void			seq_del(void *content, size_t content_size)
 {
 	free(((t_seq *)content)->str);
 	((t_seq *)content)->str = NULL;
@@ -47,7 +47,7 @@ static void	seq_del(void *content, size_t content_size)
 	(void)content_size;
 }
 
-static int	get_len_buf(t_buffer *buf)
+static int			get_len_buf(t_buffer *buf)
 {
 	t_seq	*seq;
 	t_list	*p;
@@ -64,7 +64,7 @@ static int	get_len_buf(t_buffer *buf)
 	return (size);
 }
 
-UCHAR		buf_print(char **str, int fd, t_buffer *buf)
+unsigned char		buf_print(char **str, int fd, t_buffer *buf)
 {
 	t_seq	*seq;
 

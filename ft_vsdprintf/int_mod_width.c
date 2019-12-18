@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 18:50:38 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/01 23:43:54 by rbarbero         ###   ########.fr       */
+/*   Updated: 2019/12/18 12:08:43 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 static void	mod_width_aux(char *res, char **str, size_t str_len, t_conv *conv)
 {
-	UCHAR	i;
+	unsigned char	i;
 
 	i = -1;
 	if (conv->zero && (**str == '+' || **str == '-' || **str == ' '))
@@ -36,9 +36,9 @@ static void	mod_width_aux(char *res, char **str, size_t str_len, t_conv *conv)
 
 char		*int_mod_width(char **str, t_conv *conv)
 {
-	char	*res;
-	size_t	str_len;
-	UCHAR	i;
+	char			*res;
+	size_t			str_len;
+	unsigned char	i;
 
 	str_len = ft_strlen(*str);
 	conv->minus = *conv->width < 0 ? 1 : conv->minus;

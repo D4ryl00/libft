@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 11:37:12 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/10/10 11:23:49 by rbarbero         ###   ########.fr       */
+/*   Updated: 2019/12/18 12:09:19 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-static int		get_nbr_conv(const char *format)
+static int			get_nbr_conv(const char *format)
 {
 	int	size;
 
@@ -37,7 +37,7 @@ static int		get_nbr_conv(const char *format)
 	return (size);
 }
 
-static SCHAR	print_format_conv(t_buffer *buffer, const char **format
+static signed char	print_format_conv(t_buffer *buffer, const char **format
 		, t_conv *convs, int *i)
 {
 	if (!buf_add_seq(buffer, print_conv(&convs[(*i)++], buffer->n)))
@@ -52,7 +52,7 @@ static SCHAR	print_format_conv(t_buffer *buffer, const char **format
 	return (1);
 }
 
-static intmax_t	print_format(char **str, int fd, const char *format
+static intmax_t		print_format(char **str, int fd, const char *format
 		, t_conv *convs)
 {
 	size_t		len;
@@ -82,7 +82,7 @@ static intmax_t	print_format(char **str, int fd, const char *format
 	return (buffer.n);
 }
 
-static intmax_t	return_free(int ret, t_conv **convs, int conv_nbr)
+static intmax_t		return_free(int ret, t_conv **convs, int conv_nbr)
 {
 	int	i;
 
@@ -99,7 +99,7 @@ static intmax_t	return_free(int ret, t_conv **convs, int conv_nbr)
 	return (ret);
 }
 
-intmax_t		ft_vsdprintf(char **str, int fd, const char *format
+intmax_t			ft_vsdprintf(char **str, int fd, const char *format
 		, va_list va_args)
 {
 	int			conv_nbr;

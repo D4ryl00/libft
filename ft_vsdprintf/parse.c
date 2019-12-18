@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/21 15:50:02 by rbarbero          #+#    #+#             */
-/*   Updated: 2018/04/01 23:44:30 by rbarbero         ###   ########.fr       */
+/*   Updated: 2019/12/18 12:10:12 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
-static UCHAR	parse_conv(t_conv *conv, const char **format, t_list **args
+static unsigned char	parse_conv(t_conv *conv, const char **format,
+		t_list **args
 		, int *arg_i)
 {
 	char	type[4];
@@ -39,7 +40,8 @@ static UCHAR	parse_conv(t_conv *conv, const char **format, t_list **args
 	return (1);
 }
 
-UCHAR			parse_format(t_conv *convs, const char *format, va_list va_args)
+unsigned char			parse_format(t_conv *convs, const char *format,
+		va_list va_args)
 {
 	t_list	*args;
 	int		arg_i;
