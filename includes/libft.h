@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2019/12/10 00:26:48 by rbarbero         ###   ########.fr       */
+/*   Updated: 2019/12/20 15:04:21 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,5 +205,6 @@ int				ft_hash_is_occupied(struct s_bucket *bucket);
 struct s_bucket	*ft_hash_find(struct s_dict *dict, char *key);
 struct s_bucket	*ft_hash_insert(struct s_dict *dict, char *key, void *value);
 void			*ft_hash_lookup(struct s_dict *dict, char *key);
+char			*ft_dirname(const char *path);
 
 #endif
