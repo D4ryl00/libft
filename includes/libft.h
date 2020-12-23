@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2019/12/20 15:04:21 by rbarbero         ###   ########.fr       */
+/*   Updated: 2020/12/23 10:56:29 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,7 +198,8 @@ uint64_t		endian_64_little_to_native(uint64_t d);
 uint64_t		endian_64_native_to_big(uint64_t d);
 uint64_t		endian_6_native_to_little(uint64_t d);
 int				ft_hash(char *str);
-struct s_bucket	*ft_hash_table_create(struct s_dict *dict,
+struct s_dict	*ft_hash_table_create(size_t size);
+void			*ft_hash_table_init(struct s_dict *dict,
 		struct s_bucket *table, size_t size);
 void			ft_hash_table_destroy(struct s_dict *dict);
 int				ft_hash_is_occupied(struct s_bucket *bucket);
