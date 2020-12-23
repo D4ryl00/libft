@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 17:51:04 by rbarbero          #+#    #+#             */
-/*   Updated: 2019/12/09 17:51:51 by rbarbero         ###   ########.fr       */
+/*   Updated: 2020/12/23 11:01:02 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@
 void	ft_hash_table_destroy(struct s_dict *dict)
 {
 	free(dict->table);
+	free(dict);
 }
