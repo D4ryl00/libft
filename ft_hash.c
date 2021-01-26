@@ -6,13 +6,13 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 14:59:45 by rbarbero          #+#    #+#             */
-/*   Updated: 2019/12/09 20:57:55 by rbarbero         ###   ########.fr       */
+/*   Updated: 2021/01/26 01:59:28 by rems14           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_hash(char *str)
+int	ft_hash(const char *str)
 {
 	int	res;
 

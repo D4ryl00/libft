@@ -6,13 +6,13 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 15:36:32 by rbarbero          #+#    #+#             */
-/*   Updated: 2019/12/10 00:06:44 by rbarbero         ###   ########.fr       */
+/*   Updated: 2021/03/02 01:08:30 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-struct s_bucket	*ft_hash_find(struct s_dict *dict, char *key)
+struct s_bucket	*ft_hash_find(struct s_dict *dict, const char *key)
 {
 	size_t			i;
 

@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2021/03/02 01:06:54 by rbarbero         ###   ########.fr       */
+/*   Updated: 2021/03/02 01:08:40 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ struct			s_dict
 
 struct			s_bucket
 {
-	char	*key;
-	void	*value;
+	const char	*key;
+	void		*value;
 };
 
 void			*ft_memset(void *b, int c, size_t len);
@@ -197,16 +197,16 @@ uint64_t		endian_64_big_to_native(uint64_t d);
 uint64_t		endian_64_little_to_native(uint64_t d);
 uint64_t		endian_64_native_to_big(uint64_t d);
 uint64_t		endian_6_native_to_little(uint64_t d);
-int				ft_hash(char *str);
+int				ft_hash(const char *str);
 struct s_dict	*ft_hash_table_create(size_t size);
 void			ft_hash_table_init(struct s_dict *dict,
 		struct s_bucket *table, size_t size);
 void			ft_hash_table_destroy(struct s_dict *dict);
 int				ft_hash_is_occupied(struct s_bucket *bucket);
-struct s_bucket	*ft_hash_find(struct s_dict *dict, char *key);
-struct s_bucket	*ft_hash_insert(struct s_dict *dict, char *key, void *value);
-void			ft_hash_delete(struct s_dict *dict, char *key);
-void			*ft_hash_lookup(struct s_dict *dict, char *key);
+struct s_bucket	*ft_hash_find(struct s_dict *dict, const char *key);
+struct s_bucket	*ft_hash_insert(struct s_dict *dict, const char *key, void *value);
+void			ft_hash_delete(struct s_dict *dict, const char *key);
+void			*ft_hash_lookup(struct s_dict *dict, const char *key);
 void			ft_hash_foreach(struct s_dict *dict, void (*f)(void *));
 char			*ft_dirname(const char *path);
 

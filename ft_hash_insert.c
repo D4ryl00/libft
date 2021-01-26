@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 15:05:45 by rbarbero          #+#    #+#             */
-/*   Updated: 2019/12/18 13:00:04 by rbarbero         ###   ########.fr       */
+/*   Updated: 2021/01/26 01:57:59 by rems14           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Open addressing algorithm
 */
 
-struct s_bucket	*ft_hash_insert(struct s_dict *dict, char *key, void *value)
+struct s_bucket	*ft_hash_insert(struct s_dict *dict, const char *key, void *value)
 {
 	struct s_bucket	*bucket;
 
