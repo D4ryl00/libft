@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2021/03/02 01:08:40 by rbarbero         ###   ########.fr       */
+/*   Updated: 2021/03/02 01:09:02 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,7 +204,8 @@ void			ft_hash_table_init(struct s_dict *dict,
 void			ft_hash_table_destroy(struct s_dict *dict);
 int				ft_hash_is_occupied(struct s_bucket *bucket);
 struct s_bucket	*ft_hash_find(struct s_dict *dict, const char *key);
-struct s_bucket	*ft_hash_insert(struct s_dict *dict, const char *key, void *value);
+struct s_bucket	*ft_hash_insert(struct s_dict *dict, const char *key
+		, void *value);
 void			ft_hash_delete(struct s_dict *dict, const char *key);
 void			*ft_hash_lookup(struct s_dict *dict, const char *key);
 void			ft_hash_foreach(struct s_dict *dict, void (*f)(void *));
