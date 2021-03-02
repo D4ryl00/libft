@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2020/12/23 11:35:08 by rbarbero         ###   ########.fr       */
+/*   Updated: 2021/03/02 01:03:22 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 # define LIBFT_H
 
 # include <string.h>
-# include "get_next_line.h"
-# include "ft_vsdprintf.h"
 # include <wchar.h>
 # include <stdint.h>
+# include "get_next_line.h"
+# include "ft_vsdprintf.h"
 
 # define BUFFER_SIZE 4096
 # ifndef LITTLE_ENDIAN
@@ -131,10 +131,10 @@ int				ft_putchar(int c);
 void			ft_putstr(char const *s);
 void			ft_putendl(char const *s);
 void			ft_putnbr(int n);
-int				ft_putchar_fd(int c, int fd);
-void			ft_putstr_fd(char const *s, int fd);
-void			ft_putendl_fd(char const *s, int fd);
-void			ft_putnbr_fd(int n, int fd);
+int				ft_putchar_fd(int fd, int c);
+void			ft_putstr_fd(int fd, char const *s);
+void			ft_putendl_fd(int fd, char const *s);
+void			ft_putnbr_fd(int fd, int n);
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));

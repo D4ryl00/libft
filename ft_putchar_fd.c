@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include "libft.h"
 
-int	ft_putchar_fd(int c, int fd)
+int	ft_putchar_fd(int fd, int c)
 {
 	unsigned char	*p;
 	signed char		i;
