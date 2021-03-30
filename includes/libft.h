@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2021/03/02 01:09:02 by rbarbero         ###   ########.fr       */
+/*   Updated: 2021/03/22 22:58:40 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,12 @@ typedef struct	s_buf
 	long	i;
 	long	size;
 }				t_buf;
+
+struct			s_bytes
+{
+	char	*bytes;
+	size_t	size;
+};
 
 struct			s_dict
 {
@@ -128,6 +134,7 @@ int				ft_nbrlen(intmax_t n);
 char			*ft_imtoa_base(intmax_t n, int base);
 char			*ft_uimtoa_base(uintmax_t n, int base);
 int				ft_putchar(int c);
+void			ft_putnchar(char const *s, size_t size);
 void			ft_putstr(char const *s);
 void			ft_putendl(char const *s);
 void			ft_putnbr(int n);
@@ -169,6 +176,8 @@ size_t			ft_wcslen(const wchar_t *s);
 char			*ft_getfilename(char *path);
 int				ft_buf_init(t_buf *buffer);
 char			*ft_buf_flush(t_buf *buffer);
+struct s_bytes	*ft_buf_to_bytes(t_buf *buffer);
+struct s_bytes	*ft_string_to_bytes(const char *s);
 int				ft_buf_extend(t_buf *buffer);
 int				ft_buf_add_char(t_buf *buffer, char c);
 int				ft_buf_add_nstr(t_buf *buffer, char *str, int len);
