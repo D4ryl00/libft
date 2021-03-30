@@ -6,7 +6,7 @@
 /*   By: rbarbero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/23 15:53:58 by rbarbero          #+#    #+#             */
-/*   Updated: 2021/03/30 22:18:32 by rbarbero         ###   ########.fr       */
+/*   Updated: 2021/03/30 22:25:54 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,26 +34,26 @@ uint64_t	endian_64_big_to_native(uint64_t d)
 {
 	if (ft_endianness_which() == BIG_ENDIAN)
 		return (d);
-	return (ft_swap_int32(d));
+	return (ft_swap_int64(d));
 }
 
 uint64_t	endian_64_little_to_native(uint64_t d)
 {
 	if (ft_endianness_which() == LITTLE_ENDIAN)
 		return (d);
-	return (ft_swap_int32(d));
+	return (ft_swap_int64(d));
 }
 
 uint64_t	endian_64_native_to_big(uint64_t d)
 {
 	if (ft_endianness_which() == BIG_ENDIAN)
 		return (d);
-	return (ft_swap_int32(d));
+	return (ft_swap_int64(d));
 }
 
 uint64_t	endian_64_native_to_little(uint64_t d)
 {
 	if (ft_endianness_which() == LITTLE_ENDIAN)
 		return (d);
-	return (ft_swap_int32(d));
+	return (ft_swap_int64(d));
 }
