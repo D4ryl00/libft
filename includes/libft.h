@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2021/03/22 22:58:40 by rbarbero         ###   ########.fr       */
+/*   Updated: 2021/03/30 22:18:46 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,7 +205,7 @@ uint64_t		ft_swap_int64(uint64_t d);
 uint64_t		endian_64_big_to_native(uint64_t d);
 uint64_t		endian_64_little_to_native(uint64_t d);
 uint64_t		endian_64_native_to_big(uint64_t d);
-uint64_t		endian_6_native_to_little(uint64_t d);
+uint64_t		endian_64_native_to_little(uint64_t d);
 int				ft_hash(const char *str);
 struct s_dict	*ft_hash_table_create(size_t size);
 void			ft_hash_table_init(struct s_dict *dict,
