@@ -6,7 +6,7 @@
 /*   By: rbarbero <rbarbero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 12:13:41 by rbarbero          #+#    #+#             */
-/*   Updated: 2021/03/30 22:18:46 by rbarbero         ###   ########.fr       */
+/*   Updated: 2021/04/10 00:00:50 by rbarbero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,6 +178,7 @@ int				ft_buf_init(t_buf *buffer);
 char			*ft_buf_flush(t_buf *buffer);
 struct s_bytes	*ft_buf_to_bytes(t_buf *buffer);
 struct s_bytes	*ft_string_to_bytes(const char *s);
+void			ft_free_bytes(struct s_bytes *bytes);
 int				ft_buf_extend(t_buf *buffer);
 int				ft_buf_add_char(t_buf *buffer, char c);
 int				ft_buf_add_nstr(t_buf *buffer, char *str, int len);
